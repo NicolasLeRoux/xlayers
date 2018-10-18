@@ -9,6 +9,7 @@ declare type SketchMSBooleanOperation = -1 | 0 | 1 | 2 | 3;
 declare type SketchMSCurveMode = 0 | 1 | 2 | 3 | 4;
 declare type SketchMSResizingType = 0 | 1 | 2 | 3;
 declare type SketchMSLayerListExpandedType = 0 | 1 | 2;
+declare type SketchMSReizingConstraint = number;
 declare type SketchMSEncodedBase64BinaryPlist = string;
 declare type SketchMSNSColorArchive = SketchMSKeyValueArchive;
 declare type SketchMSLayer = SketchMSPage | SketchMSSymbolMaster;
@@ -226,6 +227,7 @@ declare interface SketchMSStyle {
   endDecorationType: number;
   contextSettings: SketchMSGraphicsContextSettings;
   blur: SketchMSStyleBlur;
+  resizingConstraint: SketchMSReizingConstraint;
   reflection: SketchMSStyleReflection;
   do_objectID?: string;
   _class: 'style';

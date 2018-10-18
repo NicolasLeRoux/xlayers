@@ -13,6 +13,16 @@ export enum BorderType {
   CENTER = 0
 }
 
+export enum ConstraintType {
+  None = 63,
+  Top = 31,
+  Right	= 62,
+  Bottom = 55,
+  Left = 59,
+  Width = 61,
+  Height = 47
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -124,6 +134,8 @@ export class SketchStyleParserService {
     this.parseFills(obj, root);
     // innerShadows and shadows
     this.parseShadows(obj, root);
+    // contraints
+    this.parseConstraint(obj, root);
   }
 
   private parseBlur(obj: any, root: any) {
@@ -209,6 +221,32 @@ export class SketchStyleParserService {
       this.setStyle(obj, root, {
         'box-shadow': shadowsStyles.join(',')
       });
+    }
+  }
+
+  private parseConstraint(obj: any, root: any) {
+    const resizingConstraint = (obj as SketchMSStyle).resizingConstraint;
+    if (!(resizingConstraint & ConstraintType.None)) {
+      if (resizingConstraint & ConstraintType.Bottom) {
+        this.setStyle(obj, root, {
+          'margin-bottom': '1px'
+        });
+      }
+      if (resizingConstraint & ConstraintType.Top) {
+        this.setStyle(obj, root, {
+          'margin-top': '1px'
+        });
+      }
+      if (resizingConstraint & ConstraintType.Left) {
+        this.setStyle(obj, root, {
+          'margin-left': '1px'
+        });
+      }
+      if (resizingConstraint & ConstraintType.Right) {
+        this.setStyle(obj, root, {
+          'margin-right': '1px'
+        });
+      }
     }
   }
 
