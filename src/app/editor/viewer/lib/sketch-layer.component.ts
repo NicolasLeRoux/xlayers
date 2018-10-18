@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { ResizeEvent } from 'angular-resizable-element';
-import { UiState, CurrentLayer } from 'src/app/core/state/ui.state';
+import { UiState, CurrentLayer } from '../../../core/state/ui.state';
 
 @Component({
   selector: 'sketch-layer',

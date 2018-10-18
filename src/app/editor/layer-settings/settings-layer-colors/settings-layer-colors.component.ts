@@ -1,6 +1,6 @@
 import { Store } from '@ngxs/store';
 import { Component, OnInit } from '@angular/core';
-import { UiState, LayerCSS } from 'src/app/core/state';
+import { UiState, LayerCSS } from '../../../core/state';
 
 @Component({
   selector: 'sketch-settings-layer-colors',

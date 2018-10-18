@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { CurrentFile, UiState, CurrentLayer } from 'src/app/core/state';
+import { CurrentFile, UiState, CurrentLayer } from '../../../core/state';
 import { SketchSelectedLayerDirective } from './selected-layer.directive';
 import { SketchData, SketchService } from './sketch.service';
 

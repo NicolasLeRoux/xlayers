@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SketchStyleParserService } from './parsers/sketch-style-parser.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 
 export interface SketchUser {
   [key: string]: {

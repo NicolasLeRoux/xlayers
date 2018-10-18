@@ -10,9 +10,9 @@ import { AppComponent } from './app.component';
 export const routes: Route[] = [{
   path: '', redirectTo: '/home', pathMatch: 'full'
 }, {
-  path: 'home', loadChildren: 'src/app/home/home.module#HomeModule'
+  path: 'home', loadChildren: './home/home.module#HomeModule'
 }, {
-  path: 'editor', loadChildren: 'src/app/editor/editor.module#EditorModule'
+  path: 'editor', loadChildren: './editor/editor.module#EditorModule'
 }, {
   path: '**', redirectTo: '/home'
 }];

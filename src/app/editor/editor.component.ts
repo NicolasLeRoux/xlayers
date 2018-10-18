@@ -13,7 +13,7 @@ import {
   TogglePreview,
   ToggleCodeEditor,
   ResetUiSettings
-} from 'src/app/core/state';
+} from '../core/state';
 import { SketchContainerComponent } from './viewer/lib/sketch-container.component';
 import { environment } from '../../environments/environment';
 
