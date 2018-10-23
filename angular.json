@@ -15,9 +15,9 @@
           "options": {
             "outputPath": "dist/html",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/browser.main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "src/browser.tsconfig.json",
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -113,12 +113,30 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
+              "src/browser.tsconfig.json",
               "src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/server.main.ts",
+            "tsConfig": "src/server.tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }

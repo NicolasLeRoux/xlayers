@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
+    "ts-node": "ts-node",
     "start": "ng serve --configuration hmr",
-    "build": "ng build --prod",
+    "build:browser": "ng build --prod",
+    "build:server": "ng run angular-sketch:server:production --output-hashing none",
+    "build": "npm run build:browser && npm run build:server",
+    "serve": "node server.js",
     "postbuild": "bash scripts/stamp-build.bash",
     "test": "ng test",
     "test:ci": "ng test --watch=false --sourceMap=false",
